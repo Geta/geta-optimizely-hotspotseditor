@@ -13,6 +13,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sandbox", "sandbox", "{420CDBBA-5EBD-4A9C-A599-61A4A4AEC928}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foundation", "sandbox\Foundation\src\Foundation\Foundation.csproj", "{0624B90F-EDD2-4EC3-9F3F-0D45A4C3F502}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,11 +27,18 @@ Global
 		{A05C3AB3-FEBB-41B1-83FB-D949EFA870B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A05C3AB3-FEBB-41B1-83FB-D949EFA870B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A05C3AB3-FEBB-41B1-83FB-D949EFA870B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0624B90F-EDD2-4EC3-9F3F-0D45A4C3F502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0624B90F-EDD2-4EC3-9F3F-0D45A4C3F502}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0624B90F-EDD2-4EC3-9F3F-0D45A4C3F502}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0624B90F-EDD2-4EC3-9F3F-0D45A4C3F502}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9F0CCC06-F0D0-4D28-B1D3-640ECC9EA69F}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0624B90F-EDD2-4EC3-9F3F-0D45A4C3F502} = {420CDBBA-5EBD-4A9C-A599-61A4A4AEC928}
 	EndGlobalSection
 EndGlobal
