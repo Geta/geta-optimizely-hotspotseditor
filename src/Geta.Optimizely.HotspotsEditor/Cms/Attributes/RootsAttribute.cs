@@ -8,7 +8,7 @@ namespace Geta.Optimizely.HotspotsEditor.Cms.Attributes
     [AttributeUsage(AttributeTargets.Property)]
     public class RootsAttribute : Attribute
     {
-        public RootsAttribute() : this(RootSelection.CommerceRootPage)
+        public RootsAttribute() : this(RootSelection.All)
         {
         }
 
