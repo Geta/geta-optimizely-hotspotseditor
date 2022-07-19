@@ -1,0 +1,88 @@
+$border-radius: rem(4px);
+$transition-duration: 0.3s;
+$transition-easing: ease-in-out;
+$transition-easing-ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$shadow-key-umbra-opacity: 0.2/1.5 !default;
+$shadow-key-penumbra-opacity: 0.14/1.5 !default;
+$shadow-ambient-shadow-opacity: 0.12/1.5 !default;
+
+// Fonts
+$font-name-mark-bold: 'FF Mark Pro Bold';
+$font-name-mark-book: 'FF Mark Pro Book';
+$font-family-roboto: 'Roboto', sans-serif;
+$font-family-mark-book: $font-name-mark-book, Helvetica, Arial, sans-serif;
+$font-family-mark-bold: $font-name-mark-bold, Helvetica, Arial, sans-serif;
+$font-scale-small: 0.5;
+$font-scale-medium: 0.75;
+$font-scale-large: 1;
+// Product card
+$product-card-font-line-height: 1.25;
+
+@mixin font-product-card-visited {
+    font-size: 10px;
+    font-family: $font-family-mark-book;
+    font-weight: normal;
+    line-height: 1;
+}
+
+@mixin font-product-card-vendor {
+    font-size: 16px;
+    font-family: $font-family-mark-bold;
+    font-weight: normal;
+    line-height: $product-card-font-line-height;
+}
+
+@mixin font-product-card-name {
+    @include font-size-responsive(12px, 12px, 12px);
+    font-family: $font-family-roboto;
+    font-style: normal;
+    line-height: 1;
+    font-weight: 600;
+}
+
+@mixin font-product-card-spec {
+    font-size: 12px;
+    font-family: $font-family-mark-book;
+    font-weight: normal;
+    line-height: $product-card-font-line-height;
+}
+
+@mixin font-product-card-price {
+    @include font-size-responsive(30px, 30px, 30px);
+    font-family: $font-family-roboto;
+    font-style: normal;
+    line-height: 1;
+    font-weight: 600;
+}
+
+// Colors
+$color-black: #000;
+$color-white: #fff;
+$color-red: #f00;
+$color-font-dark: #111;
+$color-font-light: #fff;
+$color-gray-light: #e3e4e5;
+$color-green: #5c9a33;
+
+// Layout
+$min-width: 320px;
+
+// Product card
+$product-card-transition-duration: 0.1s;
+$product-card-transition-easing-in: ease-out;
+$product-card-transition-easing-out: ease-in;
+$product-card-border-color: #e8e8e8;
+$product-card-visited-color: $color-font-dark;
+$product-card-visited-background-color: $color-white;
+$product-card-image-ratio: 8/10;
+
+// Hot spots
+$hotspot-image-modal-z-index: 5;
+$hotspot-image-transition-duration: 0.15s;
+$hotspot-image-transition-easing: ease;
+$hotspot-image-plus-size-small: 31px;
+$hotspot-image-plus-size-large: 40px;
+$hotspot-image-plus-margin-small: 12px;
+$hotspot-image-plus-margin-large: 14px;
+$hotspot-image-plus-border-width-small: 1px;
+$hotspot-image-plus-border-width-large: 2px;

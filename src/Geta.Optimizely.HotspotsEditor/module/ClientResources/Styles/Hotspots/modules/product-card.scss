@@ -1,0 +1,228 @@
+.product-card {
+    padding: 20px;
+    font-size: 12px;
+    border: 2px solid black;
+    opacity: 0.9;
+    position: relative;
+    max-width: $min-width;
+    background-color: $color-white;
+    color: $color-font-dark;
+    border-radius: $border-radius;
+    will-change: transform, box-shadow;
+    transition: transform $product-card-transition-duration $product-card-transition-easing-in, box-shadow $product-card-transition-duration $product-card-transition-easing-in;
+
+    a {
+        text-decoration: none;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+    }
+
+    &-placeholder-image {
+        position: relative;
+        padding-top: percentage($product-card-image-ratio);
+        border-bottom: solid 1px $product-card-border-color;
+        background-color: $color-white;
+        color: $color-gray-light;
+    }
+
+    &-placeholder-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 60px;
+    }
+
+    &-image {
+        position: relative;
+        padding-top: percentage($product-card-image-ratio);
+        border-bottom: solid 1px transparent;
+        border-radius: $border-radius $border-radius 0 0;
+        overflow: hidden;
+
+        background: {
+            color: $color-white;
+            repeat: no-repeat;
+            position: center center;
+            size: contain;
+        }
+
+        &:before,
+        &:after {
+            opacity: 1;
+            transition: opacity $transition-duration $transition-easing;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: $color-white;
+        }
+
+        &:after {
+            @include loader;
+            content: '';
+        }
+
+        &--is-dark {
+            background: {
+                repeat: no-repeat;
+                position: center center;
+                size: cover;
+            }
+        }
+
+        &--is-light {
+            border-bottom-color: $product-card-border-color;
+        }
+
+        &--is-dark:before,
+        &--is-dark:after,
+        &--is-light:before,
+        &--is-light:after {
+            animation: none;
+            opacity: 0;
+        }
+    }
+
+    &-news-tag {
+        @include product-news-tag;
+    }
+
+    &-slogan {
+        @include product-slogan;
+
+        &-label {
+            @include product-slogan-label;
+        }
+    }
+
+    &-visited {
+        position: absolute;
+        margin-top: -1px;
+        color: $product-card-visited-color;
+        display: none;
+
+        &-label {
+            @include font-product-card-visited;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            position: absolute;
+            transform: translateY(-50%);
+            background-color: $product-card-visited-background-color;
+            text-transform: uppercase;
+        }
+
+        &--enabled {
+            display: block;
+        }
+    }
+
+    &-text {
+        position: relative;
+    }
+
+    &-vendor {
+        @include font-product-card-vendor;
+
+        &--empty:before {
+            content: '\00a0';
+        }
+    }
+
+    &-name {
+        @include font-product-card-name;
+        @include ellipsis;
+        margin-bottom: 10px;
+    }
+
+    &-spec {
+        @include font-product-card-spec;
+        @include ellipsis;
+        display: block;
+        font-family: $font-family-mark-book;
+        white-space: normal;
+        margin-bottom: 30px;
+
+        &--empty:before {
+            content: '\00a0';
+        }
+    }
+
+    &-sticker {
+        position: absolute;
+        transform: scale(0.85);
+        transform-origin: top right;
+    }
+
+    &-price {
+        @include font-product-card-price;
+    }
+
+    &-footer {
+        @include clearfix;
+        position: relative;
+        background-color: $color-white;
+        border-radius: 0 0 $border-radius $border-radius;
+    }
+
+    &-add {
+        float: right;
+        width: 50%;
+        white-space: nowrap;
+
+        .button {
+            width: 100%;
+        }
+    }
+
+    &-favourite {
+        float: left;
+        max-width: 50%;
+        white-space: nowrap;
+    }
+    // Business logic modifiers
+    &--default {
+        @include shadow-2dp;
+    }
+
+    &--has-discount {
+        @include shadow-2dp;
+    }
+
+    &--is-new {
+        @include shadow-16dp;
+    }
+    // State modifiers
+    &-clickable {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba($color-white, 0);
+        cursor: pointer;
+    }
+
+    &--hover {
+        z-index: 1;
+        transition-timing-function: $product-card-transition-easing-out;
+        transform: translateY(-2px);
+
+        &.product-card--default,
+        &.product-card--has-discount {
+            @include shadow-8dp;
+        }
+
+        &.product-card--is-new {
+            @include shadow-24dp;
+        }
+    }
+}

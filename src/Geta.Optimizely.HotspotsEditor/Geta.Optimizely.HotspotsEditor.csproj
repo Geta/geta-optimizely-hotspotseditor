@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0</TargetFrameworks>
+	
+    <Nullable>enable</Nullable>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+	
+    <PackageId>Geta.Optimizely.HotspotsEditor</PackageId>
+    <Title>An editor for image hotspots</Title>
+    <Authors>Geta Digital</Authors>
+    <Company>Geta Digital</Company>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Geta/geta-optimizely-hotspotseditor</PackageProjectUrl>
+	<PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl>https://cdn.geta.no/opensource/icons/Geta-logo-3.png</PackageIconUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>An editor for image hotspots.</Description>
+    <PackageReleaseNotes>https://github.com/Geta/geta-optimizely-hotspotseditor/blob/master/CHANGELOG.md</PackageReleaseNotes>
+    <PackageTags>Geta Optimizely Hotspots Editor</PackageTags>
+    <RepositoryUrl>https://github.com/Geta/geta-optimizely-hotspotseditor.git</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPiServer.CMS.UI" Version="[12.4.0,13.0)" />
+    <PackageReference Include="EPiServer.CMS.Core" Version="[12.4.0,13.0)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="lang\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="module\module.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="module\module.config" />
+    <None Include="msbuild\Main.proj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\images\icon.png">
+      <Pack>true</Pack>
+      <PackagePath>\</PackagePath>
+      <Link>icon.png</Link>
+    </None>
+  </ItemGroup>
+
+  <Import Project="msbuild\Main.proj" />
+
+</Project>

@@ -1,0 +1,26 @@
+﻿<div class="hotspotseditor-wrapper">
+    <div class="hotspotseditor">
+        <input type="hidden" class="value" data-dojo-attach-point="hotspots" />
+
+        <div class="epi-gadgetInnerToolbar">
+            <div class="toolbar">
+                <span class="new hotspot" title="${_resources.new}">
+                    ${_resources.new}
+                </span>
+                <span class="trash" title="${_resources.dragheretodelete}">
+                    <span class="icon epi-iconTrash"></span>
+                    ${_resources.dragheretodelete}
+                </span>
+                <span class="link-to-product hidden">
+                    <span class="icon epi-iconReferences"></span>
+                    ${_resources.content}
+                    <span class="control hidden" data-dojo-attach-point="linkToProduct"></span>
+                </span>
+            </div>
+        </div>
+        <div class="image-container">
+            <div class="hotspots"></div>
+            <div class="image"><img src="${_currentContext.previewUrl}" style="max-width: 100%;" /></div>
+        </div>
+    </div>
+</div>

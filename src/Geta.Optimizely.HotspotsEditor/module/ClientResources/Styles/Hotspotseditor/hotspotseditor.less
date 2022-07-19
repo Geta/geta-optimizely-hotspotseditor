@@ -1,0 +1,127 @@
+﻿.hotspotseditor-wrapper {
+	padding-left: 173px; /* for the text labels in epi server edit gui */
+}
+
+.hotspotseditor {
+
+	&.en {
+		.hotspot { background-image: url('../../images/hotspots/hotspot.en.png'); }
+	}
+	&.no {
+		.hotspot { background-image: url('../../images/hotspots/hotspot.no.png'); }
+	}
+
+	.hotspot {
+		background: transparent url('../../images/hotspots/hotspot.no.png') scroll no-repeat 0 0;
+		cursor: move;
+		display: block;
+		width: 82px;
+		height: 24px;
+		position: absolute;
+		-webkit-box-shadow: 1px 1px 1px 1px #666666;
+		-moz-box-shadow: 1px 1px 1px 1px #666666;
+		box-shadow: 1px 1px 1px 1px #666;
+
+	}
+	.toolbar {
+		position: relative;
+		text-align: center;
+		&:after {
+			display: block;
+			height: 0px;
+			visibility: hidden;
+			content: '';
+			line-height: 0px;
+			clear: both;
+		}
+
+		.new {
+			display: block;
+			float: left;
+			text-indent: -99999px;
+			position: static;
+			z-index: 101;
+		}
+
+		.trash {
+			display: block;
+			float: right;
+			height: 24px;
+			line-height: 24px;
+		}
+
+		.icon {
+			display: inline-block;
+			margin-bottom: -2px;
+		}
+
+		.link-to-product {
+			display: inline-block;
+			text-align: center;
+			height: 35px;
+			line-height: 33px;
+			margin-top: -3px;
+			margin-bottom: -6px;
+			border: 1px solid #666;
+			padding: 0 10px 0 5px;
+			cursor: pointer;
+			position: relative;
+			background-color: #ffffff;
+
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+
+			.control {
+				line-height: 16px;
+				text-align: left;
+			}
+
+			&.hidden, .icon.hidden {
+				display: none;
+			}
+
+		}
+	}
+
+
+	.image {
+		img { max-width: 100%; }
+	}
+
+	.image-container {
+		position: relative;
+
+		.hotspots {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 100;
+		}
+
+		.hotspot {
+			z-index: 3;
+			opacity: 0.8;
+		}
+
+		.image-map-area {
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 2;
+			background-color: rgba(180,180,180,0.5);
+		}
+		.hotspot-wrapper.active {
+			.hotspot {
+				opacity: 1;
+				z-index: 10;
+			}
+			.image-map-area {
+				background-color: rgba(255,0,255,0.5);
+			}
+		}
+
+	}
+}

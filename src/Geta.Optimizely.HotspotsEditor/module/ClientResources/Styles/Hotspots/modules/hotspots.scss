@@ -1,0 +1,202 @@
+$hotspot-image-transition-duration: 0.15s;
+$hotspot-image-transition-easing: ease;
+$hotspot-image-plus-size-small: 31px;
+$hotspot-image-plus-size-large: 31px;
+$hotspot-image-plus-margin-small: 12px;
+$hotspot-image-plus-margin-large: 14px;
+$hotspot-image-plus-border-width-small: 1px;
+$hotspot-image-plus-border-width-large: 2px;
+$color-black: #000;
+$color-white: #fff;
+$color-red: #f00;
+$border-radius: rem(4px);
+$hotspot-image-modal-z-index: 300;
+$transition-duration: 0.3s;
+$transition-easing: ease-in-out;
+$transition-easing-ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$shadow-key-umbra-opacity: 0.2/1.5 !default;
+$shadow-key-penumbra-opacity: 0.14/1.5 !default;
+$shadow-ambient-shadow-opacity: 0.12/1.5 !default;
+
+@mixin shadow-2dp() {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 3px 1px -2px rgba(0, 0, 0, $shadow-key-umbra-opacity), 0 1px 5px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity);
+}
+
+@mixin shadow-3dp() {
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 3px 3px -2px rgba(0, 0, 0, $shadow-key-umbra-opacity), 0 1px 8px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity);
+}
+
+@mixin shadow-4dp() {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 1px 10px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity), 0 2px 4px -1px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+}
+
+@mixin shadow-6dp() {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 1px 18px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity), 0 3px 5px -1px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+}
+
+@mixin shadow-8dp() {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 3px 14px 2px rgba(0, 0, 0, $shadow-ambient-shadow-opacity), 0 5px 5px -3px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+}
+
+@mixin shadow-16dp() {
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 6px 30px 5px rgba(0, 0, 0, $shadow-ambient-shadow-opacity), 0 8px 10px -5px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+}
+
+@mixin shadow-24dp() {
+    box-shadow: 0 9px 46px 8px rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 11px 15px -7px rgba(0, 0, 0, $shadow-ambient-shadow-opacity), 0 24px 38px 3px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+}
+
+// Other
+
+@mixin shadow-reverse() {
+    box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.005), 0 -3px 1px -2px rgba(0, 0, 0, 0.1), 0 -1px 5px 0 rgba(0, 0, 0, 0.05);
+}
+
+@mixin shadow-2dp-inset() {
+    box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity), inset 0 3px 1px -2px rgba(0, 0, 0, $shadow-key-umbra-opacity), inset 0 1px 5px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity);
+}
+
+@keyframes hotspot-image-modal-in {
+    0% {
+        transform: translateY(-100%);
+        background-color: rgba($color-black, 0);
+    }
+
+    50% {
+        transform: translateY(0);
+        background-color: rgba($color-black, 0);
+    }
+
+    100% {
+        transform: translateY(0);
+        background-color: rgba($color-black, 0.75);
+    }
+}
+
+.hotspot-image {
+    position: relative;
+
+    &-image {
+        display: block;
+        width: 100%;
+    }
+
+    &-spots {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    &-spot {
+        position: absolute;
+    }
+
+    &-spot--modal {
+        position: fixed;
+        z-index: $hotspot-image-modal-z-index;
+        top: 0 !important; // Override inline style
+        right: 0;
+        bottom: 0;
+        left: 0 !important; // Override inline style
+        transform: translateY(0);
+        background-color: rgba($color-black, 0.75);
+
+        &-in {
+            animation: {
+                name: hotspot-image-modal-in;
+                duration: 1s;
+                iteration-count: 1;
+                fill-mode: forwards;
+            }
+        }
+
+        &-out {
+            transform: scale(0.9);
+
+            animation: {
+                name: hotspot-image-modal-in;
+                duration: 1s;
+                iteration-count: 1;
+                fill-mode: forwards;
+                direction: reverse;
+            }
+        }
+    }
+
+    &-button {
+        @include states-depth;
+        border: none 0;
+        background: transparent;
+        position: relative;
+        padding: 8px;
+        border-radius: $border-radius;
+        will-change: box-shadow, border-radius, transform;
+        transition: box-shadow $transition-duration $transition-easing, border-radius $hotspot-image-transition-duration $hotspot-image-transition-easing, transform $hotspot-image-transition-duration $hotspot-image-transition-easing;
+        background-image: url("/Sites/Eurosko/Features/HotSpots/Content/Images/hotspots/hotspot.no.png");
+        background-size: contain;
+
+        @media (min-width: 0) and (max-width: 39.9375rem) {
+            width: $hotspot-image-plus-size-small;
+            height: $hotspot-image-plus-size-small;
+        }
+
+        @media (min-width: 40rem) {
+            width: $hotspot-image-plus-size-large;
+            height: $hotspot-image-plus-size-large;
+        }
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            background-color: $color-white;
+        }
+
+        &:before {
+            top: 50%;
+        }
+
+        &:after {
+            left: 50%;
+        }
+    }
+
+    &-placeholder {
+        position: absolute;
+        background-color: rgba($color-red, 0.25);
+        border-radius: $border-radius;
+    }
+
+    &-spot--active &-button {
+        border-radius: 50%;
+        transform: rotate(45deg);
+    }
+
+    &-product {
+        width: 280px;
+        position: absolute;
+        z-index: 1;
+        display: none;
+        margin: 0 4px 4px;
+    }
+
+    &-spot--active &-product {
+        display: block;
+    }
+
+    &-spot--modal &-product {
+        position: static;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &-spot--modal &-product {
+        left: 0 !important; // Override inline style
+    }
+
+    .carousel & {
+        margin-bottom: 0;
+    }
+}

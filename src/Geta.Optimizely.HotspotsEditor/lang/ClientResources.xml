@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+  <language name="English" id="en">
+    <geta>
+      <clientresources>
+        <hotspotseditor>
+          <dragheretodelete>Drag here to delete</dragheretodelete>
+          <new>New</new>
+        </hotspotseditor>
+      </clientresources>
+    </geta>
+  </language>
+  <language name="Danish" id="da">
+    <geta>
+      <clientresources>
+        <hotspotseditor>
+          <dragheretodelete>Træk her for at slette</dragheretodelete>
+          <new>Ny</new>
+        </hotspotseditor>
+      </clientresources>
+    </geta>
+  </language>
+  <language name="German" id="de">
+    <geta>
+      <clientresources>
+        <hotspotseditor>
+          <dragheretodelete>Zum Löschen hierher ziehen</dragheretodelete>
+          <new>Neu</new>
+        </hotspotseditor>
+      </clientresources>
+    </geta>
+  </language>
+  <language name="Spanish" id="es">
+    <geta>
+      <clientresources>
+        <hotspotseditor>
+          <dragheretodelete>Arrastra aquí para borrar</dragheretodelete>
+          <new>Nuevo</new>
+        </hotspotseditor>
+      </clientresources>
+    </geta>
+  </language>
+  <language name="Finnish" id="fi">
+    <geta>
+      <clientresources>
+        <hotspotseditor>
+          <dragheretodelete>Poista vetämällä tästä</dragheretodelete>
+          <new>Uusi</new>
+        </hotspotseditor>
+      </clientresources>
+    </geta>
+  </language>
+  <language name="French" id="fr">
+    <geta>
+      <clientresources>
+        <hotspotseditor>
+          <dragheretodelete>Faites glisser ici pour supprimer</dragheretodelete>
+          <new>Nouveau</new>
+        </hotspotseditor>
+      </clientresources>
+    </geta>
+  </language>
+  <language name="Italiano" id="it">
+    <geta>
+      <clientresources>
+        <hotspotseditor>
+          <dragheretodelete>Trascina qui per eliminare</dragheretodelete>
+          <new>Nuovo</new>
+        </hotspotseditor>
+      </clientresources>
+    </geta>
+  </language>
+  <language name="日本語 (Japanese)" id="ja">
+    <geta>
+      <clientresources>
+        <hotspotseditor>
+          <dragheretodelete>ここにドラッグして削除します</dragheretodelete>
+          <new>新着</new>
+        </hotspotseditor>
+      </clientresources>
+    </geta>
+  </language>
+  <language name="Dutch" id="nl">
+    <geta>
+      <clientresources>
+        <hotspotseditor>
+          <dragheretodelete>Sleep hier om te verwijderen</dragheretodelete>
+          <new>Nieuwe</new>
+        </hotspotseditor>
+      </clientresources>
+    </geta>
+  </language>
+  <language name="Norwegian" id="no">
+    <geta>
+      <clientresources>
+        <hotspotseditor>
+          <dragheretodelete>Dra hit for å slette</dragheretodelete>
+          <new>Ny</new>
+        </hotspotseditor>
+      </clientresources>
+    </geta>
+  </language>
+  <language name="Swedish" id="sv">
+    <geta>
+      <clientresources>
+        <hotspotseditor>
+          <dragheretodelete>Dra hit för att ta bort</dragheretodelete>
+          <new>Ny</new>
+        </hotspotseditor>
+      </clientresources>
+    </geta>
+  </language>
+  <language name="Chinese (Simplified, PRC)" id="zh-CN">
+    <geta>
+      <clientresources>
+        <hotspotseditor>
+          <dragheretodelete>拖到此处即可删除</dragheretodelete>
+          <new>新的</new>
+        </hotspotseditor>
+      </clientresources>
+    </geta>
+  </language>
+</languages>

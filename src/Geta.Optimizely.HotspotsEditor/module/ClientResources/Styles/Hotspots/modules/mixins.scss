@@ -1,0 +1,204 @@
+@mixin shadow-2dp() {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 3px 1px -2px rgba(0, 0, 0, $shadow-key-umbra-opacity), 0 1px 5px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity);
+}
+
+@mixin shadow-3dp() {
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 3px 3px -2px rgba(0, 0, 0, $shadow-key-umbra-opacity), 0 1px 8px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity);
+}
+
+@mixin shadow-4dp() {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 1px 10px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity), 0 2px 4px -1px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+}
+
+@mixin shadow-6dp() {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 1px 18px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity), 0 3px 5px -1px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+}
+
+@mixin shadow-8dp() {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 3px 14px 2px rgba(0, 0, 0, $shadow-ambient-shadow-opacity), 0 5px 5px -3px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+}
+
+@mixin shadow-16dp() {
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 6px 30px 5px rgba(0, 0, 0, $shadow-ambient-shadow-opacity), 0 8px 10px -5px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+}
+
+@mixin shadow-24dp() {
+    box-shadow: 0 9px 46px 8px rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 11px 15px -7px rgba(0, 0, 0, $shadow-ambient-shadow-opacity), 0 24px 38px 3px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+}
+
+// Other
+
+@mixin shadow-reverse() {
+    box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.005), 0 -3px 1px -2px rgba(0, 0, 0, 0.1), 0 -1px 5px 0 rgba(0, 0, 0, 0.05);
+}
+
+@mixin shadow-2dp-inset() {
+    box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity), inset 0 3px 1px -2px rgba(0, 0, 0, $shadow-key-umbra-opacity), inset 0 1px 5px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity);
+}
+
+@mixin states-depth() {
+    transition: box-shadow $transition-duration $transition-easing;
+
+    &:hover {
+        @include shadow-4dp;
+    }
+
+    &:focus {
+        @include shadow-6dp;
+        outline: none;
+    }
+
+    &:active {
+        @include shadow-8dp;
+    }
+}
+
+// Loader
+@keyframes loader-fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes loader-fade-in-out {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes loader-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@mixin loader($size: 14px, $border-color: $color-green, $fade: in-out) {
+    $fade-animation-name: loader-fade-#{$fade};
+    $fade-iteration-count: 1;
+
+    @if ($fade == in) {
+        $fade-iteration-count: infinite;
+    }
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: $size;
+    width: $size;
+    border: 2px solid $border-color;
+    border-right-color: transparent;
+    border-radius: 50%;
+    opacity: 0;
+
+    animation: {
+        name: loader-rotate, #{$fade-animation-name};
+        duration: 1s, 10s;
+        timing-function: linear, linear;
+        iteration-count: infinite, #{$fade-iteration-count};
+    }
+}
+
+// Product news tag
+@mixin product-news-tag {
+    @include font-price-amount;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1000px;
+    text-align: right;
+    transform: rotate(-90deg) translateX(-100%);
+    transform-origin: top left;
+    text-transform: uppercase;
+    line-height: 1;
+    background-color: $color-black;
+    color: $color-font-light;
+}
+
+// Product slogan
+@mixin product-slogan {
+    padding-top: percentage($product-card-image-ratio);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 34px;
+    background-color: $color-gray-light;
+    color: $color-font-dark;
+    border-bottom: solid 1px $color-gray-light;
+    border-top-left-radius: $border-radius;
+}
+
+@mixin product-slogan-label {
+    @include font-product-card-visited;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg) translateX(-100%);
+    transform-origin: top left;
+    white-space: nowrap;
+    line-height: 34px;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+// Font price amount
+@mixin font-price-amount {
+    font-size: 18px;
+    font-family: $font-family-mark-bold;
+    font-weight: normal;
+    line-height: $product-card-font-line-height;
+}
+
+@mixin font-size-responsive($large, $medium: null, $small: null) {
+    @if $small == null {
+        $small: $large * $font-scale-small;
+    }
+
+    @if $medium == null {
+        $medium: $large * $font-scale-medium;
+    }
+    $large: $large * $font-scale-large;
+    font-size: $medium;
+}
+
+// Clearfix
+@mixin clearfix {
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+// Ellipsis
+@mixin ellipsis($max-width: 100%) {
+    display: inline-block;
+    max-width: $max-width;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
