@@ -66,4 +66,7 @@
 		<Folder Include="Infrastructure\Kpi\" />
 		<Folder Include="wwwroot\" />
 	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\..\src\Geta.Optimizely.HotspotsEditor\Geta.Optimizely.HotspotsEditor.csproj" />
+	</ItemGroup>
 </Project>

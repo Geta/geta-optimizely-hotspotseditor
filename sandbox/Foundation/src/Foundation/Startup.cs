@@ -24,6 +24,7 @@ using Geta.NotFoundHandler.Optimizely.Infrastructure.Configuration;
 using Geta.Optimizely.Categories.Configuration;
 using Geta.Optimizely.Categories.Find.Infrastructure.Initialization;
 using Geta.Optimizely.Categories.Infrastructure.Initialization;
+using Geta.Optimizely.HotspotsEditor;
 using Mediachase.Commerce.Anonymous;
 using Mediachase.Commerce.Orders;
 using Microsoft.AspNetCore.Builder;
@@ -103,8 +104,8 @@ namespace Foundation
                 o.EnablePreviewFeatures = true;
                 o.IncludeEmptyContentProperties = true;
                 o.FlattenPropertyModel = false;
-                o.IncludeMasterLanguage = false; 
-                
+                o.IncludeMasterLanguage = false;
+
             });
 
             // Content Delivery API
@@ -158,13 +159,16 @@ namespace Foundation
                 options.Applications.Add(application);
                 options.AllowResourceOwnerPasswordFlow = true;
             });
-            
+
             services.AddOpenIDConnectUI();
 
             services.ConfigureContentDeliveryApiSerializer(settings => settings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore);
 
             services.AddNotFoundHandler(o => o.UseSqlServer(_configuration.GetConnectionString("EPiServerDB")), policy => policy.RequireRole(Roles.CmsAdmins));
             services.AddOptimizelyNotFoundHandler();
+
+            services.AddHotspotsEditor();
+
             services.Configure<ProtectedModuleOptions>(x =>
             {
                 if (!x.Items.Any(x => x.Name.Equals("Foundation")))
