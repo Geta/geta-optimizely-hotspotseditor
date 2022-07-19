@@ -5,7 +5,7 @@ using Geta.Optimizely.HotspotsEditor.Cms.Models;
 
 namespace Geta.Optimizely.HotspotsEditor.Cms.Attributes
 {
-    [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    [AttributeUsage(AttributeTargets.Property)]
     public class RootsAttribute : Attribute
     {
         public RootsAttribute() : this(RootSelection.CommerceRootPage)

@@ -3,7 +3,7 @@ using EPiServer.Core;
 
 namespace Geta.Optimizely.HotspotsEditor.Cms.Attributes
 {
-    [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    [AttributeUsage(AttributeTargets.Property)]
     public class TypesAttribute : Attribute
     {
         public Type[] AllowedTypes { get; set; }
