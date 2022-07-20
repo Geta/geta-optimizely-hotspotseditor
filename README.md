@@ -7,7 +7,7 @@ An editor for image hotspots.
 Type the following into your package manager console.
 
 ```
-Install-Package Geta.Optimizely.HotspotsEditor
+dotnet add package Geta.Optimizely.HotspotsEditor
 ```
 
 ## Configuration
