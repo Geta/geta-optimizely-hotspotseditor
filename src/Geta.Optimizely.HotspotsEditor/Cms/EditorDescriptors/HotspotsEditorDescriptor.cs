@@ -19,6 +19,7 @@ namespace Geta.Optimizely.HotspotsEditor.Cms.EditorDescriptors
         public override void ModifyMetadata(ExtendedMetadata metadata, IEnumerable<Attribute> attributes)
         {
             var attr = attributes as Attribute[] ?? attributes.ToArray();
+            
             if (attr.OfType<TypesAttribute>().FirstOrDefault() is TypesAttribute typesAttribute
                 && metadata.Parent is ExtendedMetadata)
             {
