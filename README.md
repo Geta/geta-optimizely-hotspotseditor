@@ -1,5 +1,10 @@
 # Geta.Optimizely.HotspotsEditor
 
+[![Build](https://github.com/Geta/geta-optimizely-hotspotseditor/actions/workflows/build.yml/badge.svg)](https://github.com/Geta/geta-optimizely-hotspotseditor/actions/workflows/build.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Geta_geta-optimizely-hotspotseditor&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Geta_geta-optimizely-hotspotseditor)
+[![Platform](https://img.shields.io/badge/Platform-.NET%206-blue.svg?style=flat)](https://docs.microsoft.com/en-us/dotnet/)
+[![Platform](https://img.shields.io/badge/Optimizely-%2012-orange.svg?style=flat)](http://world.episerver.com/cms/)
+
 An editor for image hotspots.
 
 ## Installation
@@ -7,7 +12,7 @@ An editor for image hotspots.
 Type the following into your package manager console.
 
 ```
-Install-Package Geta.Optimizely.HotspotsEditor
+dotnet add package Geta.Optimizely.HotspotsEditor
 ```
 
 ## Configuration
