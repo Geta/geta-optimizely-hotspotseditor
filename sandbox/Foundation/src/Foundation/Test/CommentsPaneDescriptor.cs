@@ -16,6 +16,8 @@ namespace Foundation.Test
 
         public override string Name { get { return "Comments"; } }
 
+        public string Test {get;set;}
+
         public override IEnumerable<Type> ContainedTypes
         {
             get
