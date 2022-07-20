@@ -50,8 +50,8 @@ The hotspot data saved during edit is then persisted into the property defined a
 If you want to link to other content than the default you can specify content like the following.
 
 ```
-    [Roots(RootSelection.StartPage | RootSelection.CommerceRootPage)]
-    [Types(typeof(PageData), typeof(ProductContent))]
+[Roots(RootSelection.StartPage | RootSelection.CommerceRootPage)]
+[Types(typeof(PageData), typeof(ProductContent))]
 ```
 
 ## Changelog
