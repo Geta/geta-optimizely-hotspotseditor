@@ -57,3 +57,10 @@ If you want to link to other content than the default you can specify content li
 ## Changelog
 
 [Changelog](CHANGELOG.md)
+
+## Contributors
+
+Thanks to all contributors
+
+| [<img src="https://avatars.githubusercontent.com/u/17863113?v=4" width="100px;" /> <br /><sub>ellinge</sub>](https://github.com/ellinge) |
+| --- |
